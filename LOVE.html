@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benim Aşkım</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #ffe6e6;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #d6336c;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 24px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #yesBtn {
+      background-color: #ff6699;
+      color: rgb(255, 255, 255);
+    }
+    #noBtn {
+      background-color: #999;
+      color: white;
+    }
+    #cuteGif {
+      display: none;
+      margin-top: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    #cuteText {
+      display: none;
+      font-size: 28px;
+      color: #d6336c;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="question">Beni seviyo musun?</h1>
+  <div class="buttons">
+    <button id="yesBtn">Seviyorum</button>
+    <button id="noBtn">Sevmiyorum</button>
+  </div>
+  <div id="cuteText">Sen dünyanın en tatlı KIZI sin yerim seni :3 💖</div>
+  <img id="cuteGif" src="https://media.tenor.com/NGFif4dxa-EAAAAi/hug-hugs.gif" alt="Sarılma kedisi" width="300">
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const cuteGif = document.getElementById('cuteGif');
+    const cuteText = document.getElementById('cuteText');
+    const question = document.getElementById('question');
+
+    yesBtn.addEventListener('click', () => {
+      cuteGif.style.display = 'block';
+      cuteText.style.display = 'block';
+      question.style.display = 'none';
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+    });
+
+    noBtn.addEventListener('click', () => {
+      const currentSize = window.getComputedStyle(yesBtn).fontSize;
+      const newSize = parseFloat(currentSize) * 2;
+      yesBtn.style.fontSize = newSize + 'px';
+    });
+  </script>
+</body>
+</html>
